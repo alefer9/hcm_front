@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+    <h1>Inicio</h1>
+    <a class="btn btn-default" href="{% url 'registrar_salas' %}">Crear salas</a>
+    <a class="btn btn-default" href="{% url 'listar_salas' %}">Listar salas</a>
+    <a class="btn btn-default" href="{% url 'registrar_insumos' %}">Crear insumos</a>
+    <a class="btn btn-default" href="{% url 'listar_insumos' %}">Listar insumos</a>
+
+    <a class="btn btn-default" href="{% url 'listar_reservas' %}">Listar Reservas</a>
+{% endblock %}

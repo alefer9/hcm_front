@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+            
+<h1>Lista Insumos</h1>
+
+<ul >
+{% for insumo in object_list %}
+    <li>{{ insumo.descripcion }}</li>
+{% empty %}
+    <li>No existen insumos registrados.</li>
+{% endfor %}
+</ul>
+<a class="btn btn-default" href="{% url 'registrar_insumos' %}">Crear insumo</a>
+<a class="btn btn-default" href="{% url 'admin_inicio' %}">Atras</a>
+{% endblock %}

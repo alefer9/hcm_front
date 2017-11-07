@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+            
+<h1>Lista Solicitudes</h1>
+
+<div class="table-responsive">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>#</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if object_list %}
+			{% for solicitud in object_list %}
+				<tr>
+					<td>{{solicitud.id}}</td>
+					<td>
+						<a class="btn btn-primary" href="">Ver</a>
+						<a class="btn btn-warning" href="">Editar</a>
+						<a class="btn btn-danger" href="">Eliminar</a>
+					</td>
+				</tr>
+			    
+			{% endfor %}
+			{%else%}
+			<h3>No existen solicitudes registradas</h3>
+			{% endif %}
+		</tbody>
+  </table>
+</div> 
+
+
+<a class="btn btn-default" href="{% url 'admin_inicio' %}">Atras</a>
+{% endblock %}

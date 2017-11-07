@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+            
+<h1>Lista Salas</h1>
+
+<ul>
+{% for sala in object_list %}
+    <li>{{ sala.nombre }} - {{ sala.capacidad }}</li>
+{% empty %}
+    <li>No existen salas registradas.</li>
+{% endfor %}
+</ul>
+
+<a class="btn btn-default" href="{% url 'registrar_salas' %}">Crear sala</a>
+<a class="btn btn-default" href="{% url 'admin_inicio' %}">Atras</a>
+
+{% endblock %}
+

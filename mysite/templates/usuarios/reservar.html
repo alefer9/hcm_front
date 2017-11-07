@@ -1,0 +1,12 @@
+{% extends "base/base.html" %}
+{% block content %}
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		{{ form.media }}
+		<button type= "submit">Guardar</button>
+	</form>	
+{% endblock %}
+<script type="text/javascript">
+	
+</script>

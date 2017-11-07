@@ -1,0 +1,29 @@
+{% extends "base/base.html" %}
+
+
+{% load i18n staticfiles %}
+
+{% block head_title %}{% trans "Fullcalendar" %}{% endblock %}
+
+{% block tab_id %}id="home_tab"{% endblock %}
+
+{% block extra_head %}
+<link rel='stylesheet' type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.2/fullcalendar.min.css" />
+<link rel='stylesheet' type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.2/fullcalendar.print.css" />
+<script type='text/javascript' src="{% static 'moment/moment.js' %}"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.2/fullcalendar.min.js"></script>
+{% endblock %}
+
+{% block body %}
+<div id="calendar"></div>
+<script type='text/javascript'>
+$(document).ready(function() {
+    // page is now ready, initialize the calendar...
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+      events: '/schedule/api/occurrences?calendar_slug=example'
+    })
+});
+</script>
+
+{% endblock %}
